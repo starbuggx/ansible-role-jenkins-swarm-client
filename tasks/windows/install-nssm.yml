@@ -11,8 +11,8 @@
     state: absent
   ignore_errors: true  # noqa ignore-errors
 
-- Name: Get absolute path to Java executable
-  Debug:
+- name: Get absolute path to Java executable
+  ansible.builtin.debug:
     msg: "{{ get_command_java.stdout | trim }}"
 
 - name: Create Windows service with NSSM
