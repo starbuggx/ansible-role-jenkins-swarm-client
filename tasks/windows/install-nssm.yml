@@ -14,7 +14,7 @@
 - name: Create Windows service with NSSM
   community.windows.win_nssm:
     name: "{{ jenkins_swarm_service_name }}"
-    application: "{{ jenkins_swarm_home }}/jenkins-swarm-client.exe"
+    application: "C:\\Program Files\\Microsoft\\jdk-21.0.4.7-hotspot\\bin\\java.exe"
     # application: "{{ get_command_java.stdout | trim }}"
     arguments: "{{ jenkins_swarm_launch_args }}"
     description: "{{ jenkins_swarm_service_description }}"
