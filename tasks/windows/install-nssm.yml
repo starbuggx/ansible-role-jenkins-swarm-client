@@ -11,6 +11,10 @@
     state: absent
   ignore_errors: true  # noqa ignore-errors
 
+- Name: Get absolute path to Java executable
+  Debug:
+    msg: "{{ get_command_java.stdout | trim }}"
+
 - name: Create Windows service with NSSM
   community.windows.win_nssm:
     name: "{{ jenkins_swarm_service_name }}"
