@@ -24,6 +24,10 @@
     stderr_file: "jenkins-swarm-client.stderr.log"
     stdout_file: "jenkins-swarm-client.stdout.log"
     state: stopped
+  register: nssm_service
+
+- debug:
+    var: nssm_service
 
 - name: Ensure that Jenkins user can run services
   ansible.windows.win_user_right:
