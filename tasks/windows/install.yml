@@ -38,9 +38,12 @@
 
 - name: Get absolute path to Java executable
   ansible.windows.win_shell: >-
-    Get-Command {{ java_exe }} | Select-Object 'Source' | Format-Wide -AutoSize
+    Get-Command java.exe | Select-Object 'Source' | Format-Wide -AutoSize
   changed_when: false
   register: get_command_java
+
+- debug:
+    var: get_command_java
 
 - name: Include task file for Windows service start type
   ansible.builtin.include_tasks:
